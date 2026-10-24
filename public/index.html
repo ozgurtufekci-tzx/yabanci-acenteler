@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Yabancı Acenteler · Domaza</title>
+<title>Yabancı Acenteler</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A5D78'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M7.5 16h17M16 7.5c3 3.2 3 13.8 0 17M16 7.5c-3 3.2-3 13.8 0 17' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -267,7 +267,6 @@ td.fill{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
 <!-- Booting -->
 <section class="auth" id="scrBoot">
   <div class="auth-card">
-    <div class="eyebrow">Domaza</div>
     <h1>Yabancı Acenteler</h1>
     <p id="bootMsg">Açılıyor…</p>
   </div>
@@ -276,7 +275,6 @@ td.fill{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
 <!-- Login -->
 <section class="auth" id="scrLogin" hidden>
   <form class="auth-card" id="fLogin" novalidate>
-    <div class="eyebrow">Domaza</div>
     <h1>Yabancı Acenteler</h1>
     <p>Devam etmek için panel şifresini gir.</p>
     <input class="sr" type="text" id="lgUser" autocomplete="username" value="yabanci-acenteler" tabindex="-1" aria-hidden="true">
@@ -293,7 +291,7 @@ td.fill{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
   <div class="userbox"><span id="syncInfo"></span><button class="linkbtn" id="btnReload" type="button">Yenile</button><button class="linkbtn" id="btnLogout" type="button">Çıkış yap</button></div>
   <header class="top">
     <div class="brand">
-      <div class="eyebrow">Domaza · Acente verisi</div>
+      <div class="eyebrow">Acente verisi</div>
       <h1>Yabancı Acenteler</h1>
       <p class="lede" id="lede">Kayıtlar yükleniyor…</p>
     </div>
@@ -409,7 +407,7 @@ td.fill{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
         </div>
       </fieldset>
       <fieldset>
-        <legend>Domaza durumu</legend>
+        <legend>Durum</legend>
         <div class="seg" role="radiogroup" aria-label="Durum">
           <label><input type="radio" name="e_durum" id="e_d_aday" value="aday" checked><span><i class="dot idle"></i>Dahil değil</span></label>
           <label><input type="radio" name="e_durum" id="e_d_gorusme" value="gorusme"><span><i class="dot warn"></i>Görüşülüyor</span></label>
@@ -1353,7 +1351,7 @@ function buildWorkbook(recs){
   crit.push('Ülke: ' + (EX.ulke.size === ulAll.length ? 'tümü' : Array.from(EX.ulke).map(k => k === EMPTY ? '(boş)' : (S.labels.ulke[k] || k)).join(', ')));
   if($('#exQ').value.trim()) crit.push('Arama: ' + $('#exQ').value.trim());
   if($('#exScopeSel').checked) crit.push('Yalnızca seçili kartlar');
-  const sum = [['Domaza · Yabancı acenteler'], ['Oluşturma', fmtNum(new Date().toISOString())], ['Kriterler', crit.join(' · ')], ['Kayıt sayısı', recs.length], [], ['Durum', 'Adet']];
+  const sum = [['Yabancı acenteler'], ['Oluşturma', fmtNum(new Date().toISOString())], ['Kriterler', crit.join(' · ')], ['Kayıt sayısı', recs.length], [], ['Durum', 'Adet']];
   DURUM_ORDER.forEach(d => sum.push([DURUM[d].l, recs.filter(a => durumOf(a) === d).length]));
   sum.push([]);
   sum.push(['Ülke', 'Toplam'].concat(DURUM_ORDER.map(d => DURUM[d].l)));
