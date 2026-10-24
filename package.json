@@ -1,0 +1,13 @@
+{
+  "name": "yabanci-acenteler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Domaza yabancı acente listesi",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.1"
+  }
+}
